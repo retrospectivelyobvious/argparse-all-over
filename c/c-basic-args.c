@@ -41,7 +41,10 @@ int main (int argc, char **argv){
  
     /* Main getopt() processing loop
      * Each time we call getopt(), it processes a single argument from the argv
-     * list. That list is compared against the
+     * list. getopt() compares that argument against the list of possible
+     * options passed to it, and returns either (1) the recognized character or
+     * (2) the '?' character. Using the return value from the function, the
+     * program can determine which arguments were passed.
      */
     while ((arg = getopt (argc, argv, "abc:")) != -1){
         switch (arg){
